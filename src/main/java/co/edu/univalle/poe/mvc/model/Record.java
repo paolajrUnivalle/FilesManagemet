@@ -12,6 +12,10 @@ import java.util.List;
 
 import static java.nio.file.Path.of;
 
+/**
+ * Clase especializada en manejar lectura y escritura de archivos de texto
+ * @author paola
+ */
 public class Record {
     private static final Path RUTA_RECORD =  Path.of("src","main","java","co","edu",
                                                           "univalle","poe","mvc",
@@ -22,6 +26,14 @@ public class Record {
 
     private Estado estado;
 
+    /**
+     * Metodo para sobreescribir un registro en un archivo de texto
+     * @param nombre Representa el nombre del jugador
+     * @param puntaje Represente el puntaje obtenido por el jugador
+     * @return Valor de la enumeración Estado que representa: GUARDADO_OK para indicar que
+     * se guardaron corectamente los datos. GUARDADO_ERROR para indicar que se presento una
+     * falla al intentar acceder al archivo
+     */
     public Estado saveRecord(String nombre, int puntaje) {
         String linea = nombre + "," + puntaje;
 
@@ -66,6 +78,10 @@ public class Record {
         return estado;
     }
 
+    /**
+     * Metodo para leer un archivo con varios registros
+     * @return una Lista enlazada de objetos RecordJudaor que representan cada registro del archivo
+     */
     public List<RecordJugador> loadVariousRecord(){
         List<RecordJugador> registros = new ArrayList<>();
         String linea;
