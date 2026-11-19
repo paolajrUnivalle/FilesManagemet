@@ -1,1 +1,3 @@
 Paola,50
+Javier,258
+Valentina,127
